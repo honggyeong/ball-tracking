@@ -6,14 +6,15 @@ from collections import deque
 import time
 import tempfile
 
-st.title("물체 추적 앱")
+st.title("TENNIS BALL TRACKER")
 
-video_file = st.file_uploader("또는 비디오 파일 선택", type=["mp4", "avi", "mov"])
+video_file = st.file_uploader("비디오 파일 선택", type=["mp4", "avi", "mov"])
 
 buffer_size = 1000  # 최대 버퍼 크기를 1000으로 늘렸습니다.
 
-whiteLower = (0, 0, 200)
-whiteUpper = (255, 50, 255)
+whiteLower = (29, 86, 6)
+whiteUpper = (64, 255, 255)
+
 
 pts = deque(maxlen=buffer_size)
 
@@ -81,3 +82,4 @@ if video_file is not None:
         st.write("비디오에서 공이 발견되지 않았습니다.")
 else:
     st.write("비디오 파일을 선택해주세요.")
+
